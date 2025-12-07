@@ -10,6 +10,8 @@ Each folder corresponds to a blog post. Folder names match the blog URL slug.
 |--------|-----------|-------|
 | `model-context-protocol-mcp-guide` | [MCP: Build Custom AI Tool Integrations](https://techyowls.io/blog/model-context-protocol-mcp-guide) | Python, TypeScript |
 | `vercel-ai-sdk-nextjs-guide` | [Vercel AI SDK with Next.js](https://techyowls.io/blog/vercel-ai-sdk-nextjs-guide) | Next.js, TypeScript |
+| `build-mcp-server-python-tutorial` | [Build MCP Server with Python](https://techyowls.io/blog/build-mcp-server-python-tutorial) | Python |
+| `claude-computer-use-tutorial` | [Claude Computer Use: Build AI Screen Agents](https://techyowls.io/blog/claude-computer-use-tutorial) | Python |
 
 ## Usage
 
