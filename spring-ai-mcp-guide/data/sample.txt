@@ -1,0 +1,7 @@
+This is a sample file in the data directory.
+The filesystem MCP server can read and write files here.
+
+Try asking the chatbot:
+- "List files in the data directory"
+- "Read the contents of sample.txt"
+- "Create a new file called notes.txt with some content"

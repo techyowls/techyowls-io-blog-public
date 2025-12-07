@@ -1,0 +1,61 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: mcp-host
+
+  ai:
+    # LLM Configuration - Claude Sonnet
+    anthropic:
+      api-key: ${ANTHROPIC_API_KEY}
+      chat:
+        options:
+          model: claude-sonnet-4-20250514
+          max-tokens: 4096
+
+    # MCP Client Configuration
+    mcp:
+      client:
+        # Local MCP servers via stdio
+        stdio:
+          connections:
+            # Brave Search - Web search capability
+            brave-search:
+              command: npx
+              args:
+                - "-y"
+                - "@modelcontextprotocol/server-brave-search"
+              env:
+                BRAVE_API_KEY: ${BRAVE_API_KEY:}
+
+            # Filesystem - Read/write files
+            filesystem:
+              command: npx
+              args:
+                - "-y"
+                - "@modelcontextprotocol/server-filesystem"
+                - "./data"
+
+        # Remote MCP servers via SSE
+        sse:
+          connections:
+            # Custom product tools server
+            custom-tools:
+              url: ${MCP_SERVER_URL:http://localhost:8081}
+
+# Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+
+# Logging
+logging:
+  level:
+    io.techyowls: DEBUG
+    org.springframework.ai: INFO

@@ -8,6 +8,7 @@ Each folder corresponds to a blog post. Folder names match the blog URL slug.
 
 | Folder | Blog Post | Stack |
 |--------|-----------|-------|
+| `spring-ai-mcp-guide` | [Spring AI + MCP: Build AI Agents That Actually Do Things](https://techyowls.io/blog/spring-ai-mcp-complete-guide) | Java 21, Spring AI, MCP |
 | `model-context-protocol-mcp-guide` | [MCP: Build Custom AI Tool Integrations](https://techyowls.io/blog/model-context-protocol-mcp-guide) | Python, TypeScript |
 | `vercel-ai-sdk-nextjs-guide` | [Vercel AI SDK with Next.js](https://techyowls.io/blog/vercel-ai-sdk-nextjs-guide) | Next.js, TypeScript |
 | `build-mcp-server-python-tutorial` | [Build MCP Server with Python](https://techyowls.io/blog/build-mcp-server-python-tutorial) | Python |

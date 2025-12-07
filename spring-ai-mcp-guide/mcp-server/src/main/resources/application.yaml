@@ -1,0 +1,25 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: mcp-server
+
+  ai:
+    mcp:
+      server:
+        name: techyowls-product-tools
+        version: 1.0.0
+
+# Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+# Logging
+logging:
+  level:
+    io.techyowls: DEBUG
+    org.springframework.ai.mcp: DEBUG
