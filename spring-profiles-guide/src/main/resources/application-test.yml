@@ -1,0 +1,20 @@
+# Test profile
+# Automatically used by @SpringBootTest when test profile is active
+
+app:
+  environment: test
+  api-url: http://localhost:8080/api
+  debug-mode: true
+  cache:
+    enabled: false
+    ttl-minutes: 0
+  email:
+    send-enabled: false
+
+logging:
+  level:
+    io.techyowls: DEBUG
+
+spring:
+  main:
+    lazy-initialization: true  # Faster test startup

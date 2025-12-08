@@ -1,0 +1,25 @@
+# Production profile
+# Activated via: SPRING_PROFILES_ACTIVE=prod
+
+app:
+  environment: production
+  api-url: ${API_URL}  # Must be set as env var
+  debug-mode: false
+  connection-timeout: 3000  # Faster timeouts in prod
+  read-timeout: 5000
+  cache:
+    enabled: true
+    ttl-minutes: 60  # Longer cache in prod
+  email:
+    send-enabled: true  # Real emails in prod
+
+logging:
+  level:
+    io.techyowls: INFO
+    org.springframework: WARN
+
+# Production-specific settings
+server:
+  error:
+    include-stacktrace: never  # Don't expose stack traces
+    include-message: never

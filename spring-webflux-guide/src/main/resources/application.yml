@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: webflux-demo
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/webflux-demo
+
+server:
+  port: 8080
+
+logging:
+  level:
+    io.techyowls: DEBUG
+    org.springframework.data.mongodb: DEBUG

@@ -1,0 +1,16 @@
+# Development profile
+# Run with: ./mvnw spring-boot:run -Dspring-boot.run.profiles=dev
+
+app:
+  environment: development
+  debug-mode: true
+  cache:
+    enabled: false  # No cache in dev for fresh data
+    ttl-minutes: 5
+  email:
+    send-enabled: false  # Never send real emails in dev
+
+logging:
+  level:
+    io.techyowls: TRACE
+    org.springframework.web: DEBUG

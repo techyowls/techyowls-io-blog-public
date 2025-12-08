@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: logging-demo
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    io.techyowls: DEBUG
+  pattern:
+    # Human-readable for development
+    console: "%d{HH:mm:ss.SSS} [%thread] [%X{requestId}] %-5level %logger{36} - %msg%n"
