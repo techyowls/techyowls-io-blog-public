@@ -1,0 +1,73 @@
+spring:
+  application:
+    name: virtual-threads-demo
+
+  # Enable Virtual Threads - This is the key configuration!
+  threads:
+    virtual:
+      enabled: true
+
+  # Database Configuration
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+    hikari:
+      maximum-pool-size: 50
+      minimum-idle: 10
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+# Server Configuration
+server:
+  port: 8080
+  tomcat:
+    threads:
+      max: 200
+    accept-count: 100
+    max-connections: 10000
+
+# Actuator Configuration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,threaddump,prometheus
+  metrics:
+    tags:
+      application: ${spring.application.name}
+
+# External Services (simulated)
+external:
+  inventory:
+    url: https://jsonplaceholder.typicode.com
+    delay-ms: 50
+  payment:
+    url: https://jsonplaceholder.typicode.com
+    delay-ms: 200
+  notification:
+    url: https://jsonplaceholder.typicode.com
+    delay-ms: 100
+
+# Logging
+logging:
+  level:
+    io.techyowls: DEBUG
+    org.springframework.web: INFO
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] [virtual=%X{virtual}] %-5level %logger{36} - %msg%n"
