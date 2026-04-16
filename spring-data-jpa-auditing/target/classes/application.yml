@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: jpa-auditing-demo
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        # Envers configuration
+        org.hibernate.envers:
+          audit_table_suffix: _aud
+          revision_field_name: rev
+          revision_type_field_name: revtype

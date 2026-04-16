@@ -1,0 +1,30 @@
+# Base configuration (shared by all profiles)
+# Profile-specific files override these values
+
+spring:
+  application:
+    name: profiles-demo
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+
+# App configuration (type-safe via AppConfig.java)
+app:
+  environment: ${APP_ENV:development}
+  api-url: ${API_URL:http://localhost:8080/api}
+  connection-timeout: 5000
+  read-timeout: 10000
+  debug-mode: false
+  cache:
+    enabled: true
+    ttl-minutes: 30
+  email:
+    from: noreply@techyowls.io
+    send-enabled: false
+
+server:
+  port: ${PORT:8080}
+
+logging:
+  level:
+    root: INFO
+    io.techyowls: DEBUG

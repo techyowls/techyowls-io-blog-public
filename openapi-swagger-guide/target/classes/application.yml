@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: openapi-demo
+
+# SpringDoc OpenAPI Configuration
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+    # UI customization
+    operations-sorter: method
+    tags-sorter: alpha
+    display-request-duration: true
+    # Try it out enabled by default
+    try-it-out-enabled: true
+  # Show actuator endpoints
+  show-actuator: false
+  # Default media types
+  default-consumes-media-type: application/json
+  default-produces-media-type: application/json
+
+server:
+  port: 8080

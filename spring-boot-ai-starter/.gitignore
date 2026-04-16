@@ -1,0 +1,29 @@
+# Git
+target/
+.mvn/
+!.mvn/wrapper/maven-wrapper.jar
+*.class
+*.jar
+*.war
+*.ear
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+*.log
+
+# Temp files
+*.tmp
+*.swp
+*~

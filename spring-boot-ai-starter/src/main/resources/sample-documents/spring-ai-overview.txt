@@ -1,0 +1,40 @@
+What is Spring AI?
+
+Spring AI is a framework that provides Spring-friendly abstractions for AI services. It aims to make integrating AI capabilities into Java applications as straightforward as using any other Spring Boot starter.
+
+Key Features of Spring AI:
+
+1. Portable API abstraction across AI providers (OpenAI, Azure OpenAI, HuggingFace, etc.)
+2. Support for synchronous and streaming API options
+3. Support for Prompt Engineering and Prompt Templates
+4. Portable Options API for defining AI provider specific parameters
+5. Vector Store Support for different vector databases
+6. Support for document readers (PDF, JSON, Word, etc.)
+
+Why Use Spring AI?
+
+Spring AI allows Java developers to build AI-powered applications using familiar Spring patterns and best practices. It eliminates the need to learn Python or work outside the Spring ecosystem.
+
+Architecture:
+
+Spring AI uses a clean separation of concerns:
+- ChatClient: For chat completions
+- EmbeddingClient: For generating embeddings
+- VectorStore: For storing and searching vectors
+- DocumentReaders: For reading various document formats
+
+Benefits:
+
+1. Type Safety: Strong typing with Java vs dynamic typing in Python
+2. Enterprise Ready: Built on Spring Boot with production-grade features
+3. Ecosystem Integration: Works seamlessly with Spring Data, Spring Security, etc.
+4. Multi-Provider: Easy to switch between AI providers without code changes
+5. Observability: Built-in metrics, tracing, and health checks
+
+Use Cases:
+
+- Building chatbots and virtual assistants
+ - Document Q&A systems with RAG
+- Content generation and summarization
+- Semantic search applications
+- AI-powered recommendation systems

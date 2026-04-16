@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: flyway-demo
+  datasource:
+    url: jdbc:h2:mem:testdb;MODE=PostgreSQL
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      # Let Flyway handle DDL, not Hibernate
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  # Flyway configuration
+  flyway:
+    enabled: true
+    # Migration locations
+    locations: classpath:db/migration
+    # Baseline for existing databases
+    baseline-on-migrate: true
+    baseline-version: 0
+    # Validate migrations match
+    validate-on-migrate: true
+    # Clean disabled in production!
+    clean-disabled: true
+    # Out of order for development
+    out-of-order: false
+
+logging:
+  level:
+    org.flywaydb: DEBUG
